@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dev Skills Lab</title>
+</head>
+<body>
+  <h1>Fruits</h1>
+  <ul>
+    <% fruits.forEach(fruit => { %>
+      <li>
+				<%= fruit.favorite %> 
+				- 
+				<%= fruit.eaten ? 'eaten' : 'not eaten' %>
+			</li>
+    <% }) %>
+  </ul>
+</body>
+</html>

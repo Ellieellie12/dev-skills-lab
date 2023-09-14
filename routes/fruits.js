@@ -1,13 +1,9 @@
 import { Router } from 'express'
-import { fruits } from '../data/fruit-data.js'
+import * as fruitsCtrl from '../controllers/fruits.js'
 
 const router = Router()
 
-router.get('/', function(req,res){
-  res.render('fruits/index', {
-    fruits: fruits
-  })
-})
+router.get('/', fruitsCtrl.index)
 
 
 export { router }

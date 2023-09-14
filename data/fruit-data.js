@@ -1,7 +1,7 @@
 const fruits = [
-  {favorite: 'Apple', color:'red', eaten:true},
-  {favorite: 'Pineapple', color:'yellow', eaten:true},
-  {favorite: 'Mango', color:'orange', eaten:true}
+  {favorite: 'Apple', color:'red'},
+  {favorite: 'Pineapple', color:'yellow'},
+  {favorite: 'Mango', color:'orange'}
 ]
 
 export {

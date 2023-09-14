@@ -1,10 +1,13 @@
 import { Router } from 'express'
+import { fruits } from '../data/fruit-data.js'
 
 const router = Router()
 
-// GET localhost:3000/users
-router.get('/', function(req, res) {
-  res.send('respond with a resource')
+router.get('/', function(req,res){
+  res.render('fruits/index', {
+    fruits: fruits
+  })
 })
+
 
 export { router }

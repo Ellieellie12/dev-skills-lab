@@ -17,7 +17,13 @@ function newFruit(req, res) {
 res.render('fruits/new')
 }
 
+function create(req, res) {
+console.log(req.body)
+res.redirect('/fruits/new')
+}
+
 export {
   index,
-  newFruit as new
+  newFruit as new,
+  create
 }

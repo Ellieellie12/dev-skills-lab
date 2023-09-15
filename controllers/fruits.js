@@ -27,11 +27,23 @@ function create(req, res) {
     console.log(error)
     res.redirect('/fruits')
   })
-  
 }
 
+function show(req, res) {
+  Fruit.findById(req.params.fruitId)
+  .then(fruit => {
+    res.render('fruits/show', {
+      fruit: fruit
+    })
+  })
+    .catch(error=> {
+      console.log(error)
+      res.redirect('/fruits')
+  })
+}
 export {
   index,
   newFruit as new,
-  create
+  create,
+  show
 }

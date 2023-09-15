@@ -1,11 +1,23 @@
-import { fruits } from '../data/fruit-data.js'
+import { Fruit } from "../models/fruit.js"
 
 function index(req, res) {
-  res.render('fruits/index', {
-    fruits: fruits
+  Fruit.find({})
+  .then(fruits => {
+    res.render('fruits/index', {
+      fruits: fruits
+  })
+})
+  .catch(error => {
+    console.log(error)
+    res.direct('/')
   })
 }
 
+function newFruit(req, res) {
+res.render('fruits/new')
+}
+
 export {
-  index
+  index,
+  newFruit as new
 }

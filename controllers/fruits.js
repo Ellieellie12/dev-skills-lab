@@ -4,7 +4,8 @@ function index(req, res) {
   Fruit.find({})
   .then(fruits => {
     res.render('fruits/index', {
-      fruits: fruits
+      fruits: fruits,
+      time: req.time
   })
 })
   .catch(error => {
@@ -41,6 +42,7 @@ function show(req, res) {
       res.redirect('/fruits')
   })
 }
+
 export {
   index,
   newFruit as new,

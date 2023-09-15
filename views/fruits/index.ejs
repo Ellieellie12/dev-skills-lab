@@ -10,7 +10,7 @@
   <ul>
     <% fruits.forEach(fruit => { %>
       <li>
-				<%= fruit.favorite %> 
+				<a href="/fruits/<%= fruit._id %>"><%= fruit.favorite %></a>
 				- 
 				<%= fruit.eaten ? 'eaten' : 'not eaten'%>
 			</li>

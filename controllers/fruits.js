@@ -18,8 +18,16 @@ res.render('fruits/new')
 }
 
 function create(req, res) {
-console.log(req.body)
-res.redirect('/fruits/new')
+  req.body.eaten = false
+  Fruit.create(req.body)
+  .then(fruit => {
+    res.redirect('/fruits')
+  })
+  .catch(error=> {
+    console.log(error)
+    res.redirect('/fruits')
+  })
+  
 }
 
 export {

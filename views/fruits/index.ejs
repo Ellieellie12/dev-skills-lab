@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="/stylesheets/style.css">
+<title>Express To-Do</title>
   <title>Dev Skills Lab</title>
 </head>
 <body>
@@ -10,6 +12,13 @@
   <ul>
     <% fruits.forEach(fruit => { %>
       <li>
+        <form 
+          action="/fruits/<%= fruit._id %>?_method=DELETE"
+          class="delete-form"
+          method="POST"
+        >
+          <button type="submit">X</button>
+        </form>
 				<a href="/fruits/<%= fruit._id %>"><%= fruit.favorite %></a>
 				- 
 				<%= fruit.eaten ? 'eaten' : 'not eaten'%>

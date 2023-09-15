@@ -43,9 +43,21 @@ function show(req, res) {
   })
 }
 
+function deleteTodo(req, res) {
+  Fruit.findByIdAndDelete(req.params.fruitId)
+  .then(fruit => {
+    res.redirect('/fruits')
+  })
+  .catch(error => {
+    console.log(error)
+    res.redirect('/fruits')
+  })
+}
+
 export {
   index,
   newFruit as new,
   create,
-  show
+  show,
+  deleteTodo as delete
 }
